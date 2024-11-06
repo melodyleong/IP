@@ -26,6 +26,8 @@
         </div>
         <nav class="navigation">
             <div class="click__theme" id="switch-theme-button">Switch Theme</div>
+            <div class="date" id="date"></div>
+            <div class="clock" id="clock"></div>
         </nav>
     </header>
 
@@ -40,12 +42,16 @@
             </center>
             <div class="dropdown">
 
-                <button class="dropbtn" id="dropdown-button">Theme 1</button>
+                <button class="dropbtn" id="dropdown-button">Theme 1 <span class="arrow">&#9660;</span></button>
                 <div class="dropdown-content">
-                    <div class="video-option" data-video="media/2047965-hd_1280_720_30fps.mp4">Theme 1</div>
-                    <div class="video-option" data-video="media/5905282-hd_1920_1080_24fps.mp4">Theme 2</div>
-                    <div class="video-option" data-video="media/6492000-uhd_4096_2160_25fps.mp4">Theme 3</div>
-                    <div class="video-option" data-video="media/uhd_25fps.mp4">Theme 4</div>
+                    <div class="video-option" data-video="media/2047965-hd_1280_720_30fps.mp4">Theme 1 <span
+                            class="arrow">&#9660;</span></div>
+                    <div class="video-option" data-video="media/5905282-hd_1920_1080_24fps.mp4">Theme 2 <span
+                            class="arrow">&#9660;</span></div>
+                    <div class="video-option" data-video="media/6492000-uhd_4096_2160_25fps.mp4">Theme 3 <span
+                            class="arrow">&#9660;</span></div>
+                    <div class="video-option" data-video="media/uhd_25fps.mp4">Theme 4 <span
+                            class="arrow">&#9660;</span></div>
                 </div>
             </div>
             <div class="divider2"></div>
@@ -65,27 +71,90 @@
     <main>
 
 
-        <!-- Draggable Icons -->
         <div class="icons">
-            <!-- Radio Icon with Caption -->
-            <a href="page1.html" class="draggable-container draggable">
-                <img src="media/E056.svg" class="radio fm" alt="radio fm">
-                <figcaption class="caption">Radio FM</figcaption>
-            </a>
-            
-            <!-- Calendar Icon with Caption -->
-            <a href="events.html" class="draggable-container draggable">
-                <img src="1F5D3.svg" class="events" alt="events">
+
+            <div id="explorer.html" class="draggable-container explorer" draggable="true" onclick="openGoogle()">
+                <img src="media/explorer.svg" alt="explorer">
+                <figcaption class="caption">Explorer</figcaption>
+            </div>
+
+            <a href="events.html" class="draggable-container events" draggable="true">
+                <img src="media/events.svg" alt="events">
                 <figcaption class="caption">Events</figcaption>
             </a>
-            
-            <!-- Add more icons as needed -->
-            <a href="contactme.html" class="draggable-container draggable">
-                <img src="media/1F4E8.svg" class="contact me" alt="contact me">
+
+            <a href="#" class="draggable-container contactme" draggable="true" id="contactLink">
+                <img src="media/contactme.svg" alt="contact me">
                 <figcaption class="caption">Contact Me</figcaption>
             </a>
+
+            <div id="contactFormModal" class="contact-form-modal">
+                <div class="contact-form-modal-content">
+                    <div class="divider6-container">
+                        <div class="divider-group">
+                            <div class="divider6"></div>
+                            <div class="divider6"></div>
+                            <div class="divider6"></div>
+                        </div>
+                        <button class="close-btn">X</button>
+                    </div>
+                    <center><h2>Contact Me</h2></center>
+                    <form>
+                        <label class="form-label" for="name">Name:</label>
+                        <input class="form-input" type="text" id="name" name="name" required>
+                        
+                        <label class="form-label" for="email">Email:</label>
+                        <input class="form-input" type="email" id="email" name="email" required>
+                        
+                        <label class="form-label" for="message">Message:</label>
+                        <textarea class="form-input" id="message" name="message" required></textarea>
+                        
+                        <button class="contact-submit-btn" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <a href="magazines.html" class="draggable-container magazines" draggable="true">
+                <img src="media/magazines.svg" alt="magazines">
+                <figcaption class="caption">Magazines</figcaption>
+            </a>
+
+            <a id="draggable-trash" class="draggable-container trash" draggable="true">
+                <img src="media/trash.svg" alt="trash">
+                <figcaption class="caption">Trash</figcaption>
+            </a>
+
+            <a href="about.html" class="draggable-container about" draggable="true">
+                <img src="media/about.svg" alt="about">
+                <figcaption class="caption">About</figcaption>
+            </a>
+
+            <a href="radio.html" class="draggable-container radio" draggable="true">
+                <img src="media/radio.svg" alt="radio">
+                <figcaption class="caption">Radio FM</figcaption>
+            </a>
+
+
+
+            <a href="javascript:void(0);" id="notes-icon" class="draggable-container notes" draggable="true">
+                <img src="media/notes.svg" alt="notes">
+                <figcaption class="caption">Notes</figcaption>
+            </a>
+
+            <div id="notes-widget" class="notes-widget">
+                <div class="notes-header">
+                    <div class="divider4"></div>
+                    <div class="divider5"></div>
+                    <div class="divider5"></div>
+                    <span>Notes</span>
+                </div>
+                <textarea id="note-text" class="notes-textarea" placeholder="Write your notes here..."></textarea>
+                <button id="save-note" class="notes-save-btn">Save</button>
+            </div>
+
+
         </div>
-        </main>
+    </main>
 
 
 
